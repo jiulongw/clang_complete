@@ -12,8 +12,8 @@ if exists('g:clang_complete_loaded')
 endif
 let g:clang_complete_loaded = 1
 
-au FileType c,cpp,objc,objcpp call <SID>ClangCompleteInit()
-au FileType c.*,cpp.*,objc.*,objcpp.* call <SID>ClangCompleteInit()
+" au FileType c,cpp,objc,objcpp call <SID>ClangCompleteInit()
+" au FileType c.*,cpp.*,objc.*,objcpp.* call <SID>ClangCompleteInit()
 
 let b:clang_parameters = ''
 let b:clang_user_options = ''
@@ -655,5 +655,7 @@ function! g:ClangGotoDeclarationPreview()
   call s:GotoDeclaration(1)
   return ''
 endfunction
+
+com! ClangCompleteInit call <SID>ClangCompleteInit()
 
 " vim: set ts=2 sts=2 sw=2 expandtab :
